@@ -72,3 +72,20 @@ const focusParagraph = document.querySelectorAll("p");
         
 })
 
+const bigH2 = document.querySelectorAll("h2");
+      //Wheel
+      bigH2.forEach(item => {
+        item.addEventListener('mouseenter', function(event){
+          item.style.fontSize = "5.5rem";
+    })
+        
+})
+
+      //Wheel
+      bigH2.forEach(item => {
+        item.addEventListener('mouseleave', function(event){
+        item.style.fontSize = "3.5rem";
+      })
+        
+})
+
