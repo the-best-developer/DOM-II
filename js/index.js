@@ -24,12 +24,10 @@ navItems.forEach(item => {
         if(event.key === "ArrowLeft" && ind !== 3) {
             ind++;
             event.target.style.order = ind;
-            console.log(ind)
         }
         if(event.key === "ArrowRight" && ind !== -3) {
             ind--;
             event.target.style.order = ind;
-            console.log(ind)
         }
     })
 })
@@ -98,7 +96,6 @@ formEmail.addEventListener('blur', (event) => {
 const mainNav = document.querySelector(".main-navigation");
 mainNav.addEventListener("dblclick", (event) => {
     event.target.style.background = "lightgrey";
-    console.log(event)
 })
 
 // When double clicking logo-heading class, turn background darkgrey
@@ -110,5 +107,4 @@ const logo = document.querySelector(".logo-heading");
 logo.addEventListener("dblclick", (event) => {
     event.stopPropagation();
     event.target.style.background = "darkgrey";
-    console.log(event)
 })
