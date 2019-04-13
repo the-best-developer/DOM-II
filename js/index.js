@@ -39,18 +39,21 @@ navItems[3].addEventListener("mouseover",item => {
 
     //Keydown
     let ind = 0;
-navItems[0].addEventListener('keydown', function(event){
+navItems.forEach(item => {
+
+item.addEventListener('keydown', function(event){
         console.log(event.key)
-        if(event.key === "ArrowLeft") {
+        if(event.key === "ArrowLeft" && ind !== 3) {
             ind++;
             event.target.style.order = ind;
             console.log(ind)
         }
-        if(event.key === "ArrowRight") {
+        if(event.key === "ArrowRight" && ind !== -3) {
             ind--;
             event.target.style.order = ind;
             console.log(ind)
         }
+})
 })
 
 const funBusImg = document.querySelector(".intro img");
@@ -66,26 +69,21 @@ const funBusImg = document.querySelector(".intro img");
 })
 
 const focusParagraph = document.querySelectorAll("p");
-      //Wheel
-      document.addEventListener('scroll', function(event){
-        focusParagraph.forEach(para => para.style.color = "darkgreen")
-        
+//Scroll
+document.addEventListener('scroll', function(event){
+    focusParagraph.forEach(para => para.style.color = "darkgreen")
 })
 
 const bigH2 = document.querySelectorAll("h2");
-      //Wheel
-      bigH2.forEach(item => {
-        item.addEventListener('mouseenter', function(event){
-          item.style.fontSize = "5.5rem";
-    })
-        
+//MouseEnter
+bigH2.forEach(item => {
+    item.addEventListener('mouseenter', function(event){
+        item.style.fontSize = "5.5rem";
+    })    
 })
-
-      //Wheel
-      bigH2.forEach(item => {
-        item.addEventListener('mouseleave', function(event){
+//MouseLeave
+bigH2.forEach(item => {
+    item.addEventListener('mouseleave', function(event){
         item.style.fontSize = "3.5rem";
-      })
-        
+    })
 })
-
