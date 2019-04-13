@@ -93,3 +93,22 @@ formEmail.addEventListener('blur', (event) => {
     event.target.style.color = ""; 
 });
 
+// Stop propagation
+// When double clicking the main-navigation, turn background lightgrey.
+const mainNav = document.querySelector(".main-navigation");
+mainNav.addEventListener("dblclick", (event) => {
+    event.target.style.background = "lightgrey";
+    console.log(event)
+})
+
+// When double clicking logo-heading class, turn background darkgrey
+// If event.stopPropagation() is not invoked, clicking logo-heading would result in
+// the background first being changed to darkgrey, and then overwrote
+// by main-navigation EventListener with lightgrey due to bubbling up and
+// main-navigation EventListener being the last activated event.
+const logo = document.querySelector(".logo-heading");
+logo.addEventListener("dblclick", (event) => {
+    event.stopPropagation();
+    event.target.style.background = "darkgrey";
+    console.log(event)
+})
