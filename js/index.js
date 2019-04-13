@@ -40,7 +40,7 @@ funBusImg.addEventListener('wheel', function(event){
     event.preventDefault();
     event.target.style.opacity = -(event.deltaY / 16);
 })
-    //Double click
+//Double click
 funBusImg.addEventListener('dblclick', function(event){
     event.preventDefault();
     event.target.style.opacity = "1"
@@ -65,4 +65,31 @@ bigH2.forEach(item => {
         item.style.fontSize = "3.5rem";
     })
 })
+
+const formButton = document.querySelector("#formButton");
+//Click
+formButton.addEventListener('click', function(event){
+    event.preventDefault();
+    event.target.textContent = "Success!"
+    event.target.style.color = "green";
+})
+
+// Focus and blur
+formName = document.querySelector("#formName");
+formName.addEventListener('focus', (event) => {
+    event.target.style.background = 'yellow';    
+});
+formName.addEventListener('blur', (event) => {
+    event.target.style.background = "";    
+});
+
+formEmail = document.querySelector("#formEmail");
+formEmail.addEventListener('focus', (event) => {
+    event.target.style.background = 'green';  
+    event.target.style.color = "white";    
+});
+formEmail.addEventListener('blur', (event) => {
+    event.target.style.background = "";
+    event.target.style.color = ""; 
+});
 
